@@ -43,7 +43,7 @@ a {
 }
 
 a::after {
-  @apply content-[''] block w-0 h-0.5 bg-blue-700 text-blue-700 transition-[width] duration-150 ease-linear;
+  @apply content-[''] block w-0 h-0.5 bg-blue-700 text-blue-700 transition-[width] duration-150 ease-out;
 }
 
 a:hover {
