@@ -14,16 +14,16 @@
     </div>
     <nav>
       <ul class="flex space-x-12">
-        <li class="text-blue-500 text-xl font-semibold m-2">
+        <li>
           <router-link to="/">Home</router-link>
         </li>
-        <li class="text-blue-500 text-xl font-semibold m-2">
+        <li>
           <router-link to="/experience">Experience</router-link>
         </li>
-        <li class="text-blue-500 text-xl font-semibold m-2">
+        <li>
           <router-link to="/side-projects">Side Projects</router-link>
         </li>
-        <li class="text-blue-500 text-xl font-semibold m-2">
+        <li>
           <router-link to="/about">About</router-link>
         </li>
       </ul>
@@ -38,12 +38,27 @@ const router = useRouter();
 </script>
 
 <style lang="postcss" scoped>
-li > a {
-  @apply h-8;
+a {
+  @apply text-blue-500;
 }
 
-li a:hover,
-li a.router-link-active {
-  @apply border-b-2 border-blue-500 text-blue-700;
+a::after {
+  @apply content-[''] block w-0 h-0.5 bg-blue-700 text-blue-700 transition-[width] duration-150 ease-linear;
+}
+
+a:hover {
+  @apply text-blue-700;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a.router-link-exact-active {
+  @apply text-blue-700;
+}
+
+a.router-link-active::after {
+  @apply content-[''] w-full h-0.5 bg-blue-700;
 }
 </style>

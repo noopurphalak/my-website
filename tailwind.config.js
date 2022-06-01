@@ -22,6 +22,9 @@ module.exports = {
       animation: {
         "bounce-once": "smooth-bounce 0.5s linear 1",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   plugins: [],
